@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    background: linear-gradient(450deg, #0c2b53 27.26%, #5f96d8 96.03%);
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    background: #ECF4FF;
+    color: #1C1C1C;
+    border-radius: 20px;
+    margin: 3% 5%;
+    padding: 30px 64px;
+    box-shadow: 6px 6px 6px 0px #0E1D2F;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.perfil {
+    display: flex;
+    align-items: center;
+}
+
+.perfil img {
+    border-radius: 460px;
+    max-height: 160px;
+    margin-right: 12px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.header-text h1 {
+    font-weight: 700;
+    font-size: 36px;
+}
+
+.header-text h3 {
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.theme button {
+    font-size: 24px;
+    font-weight: 400;
+    padding: 8px 16px;
+    background: #ECF4FF;
+    border-radius: 100px;
+
+    color: #0E1D2F;
+    background: #ECF4FF;
+    border: 2px solid #0E1D2F;
+    border-color: #0E1D2F;
+}
+
+main {
+    background: linear-gradient(230.65deg, #499CFE 27.49%, #9CC8FC 83.19%);
+    box-shadow: 2px 2px 4px rgba(16, 16, 16, 0.42);
+    border-radius: 20px;
+    margin-top: 44px;
+    padding-bottom: 20px;
+}
+
+.projetos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projetos ul p {
+    font-weight: 700;
+    font-size: 48px;
+}
+
+.projetos ul li {
+    list-style: none;
+    line-height: 45px;
+}
+
+.projetos ul li a {
+    font-weight: 400;
+    font-size: 36px;
+    text-decoration: none;
+    color: #420202;
+}
+
+.projetos ul li a:hover {
+    color: black;
+    box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.5);
+}
+
+.socials {
+    font-size: 38px;
+}
+
+.socials ul li {
+    list-style: none;
+    display: inline;
+    margin-right: 10px;
+}
+
+.socials ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.socials ul li:nth-child(1) a:hover {
+    color: rgb(89, 93, 9);
+}
+
+.socials ul li:nth-child(2) a:hover {
+    color: #171515ce;
+}
+
+.socials ul li:nth-child(3) a:hover {
+    color: rgba(0, 0, 0, 0);
+    background-image: url(assets/imgs/instagram.svg);
+    background-repeat: no-repeat;
+    background-size: 38px;
+    background-position: top;
+}
+
+.socials ul li:nth-child(4) a:hover {
+    color: #08a0e9;
+}
+
+.socials ul li:nth-child(5) a:hover {
+    color: #c8211b;
+}
+
+/* ======== DARK THEME ========== */
+
+.dark {
+    background: linear-gradient(236.85deg, #375b86 27.26%, #6B87A9 96.03%);
+}
+
+.dark .container {
+    background: #333439;
+    color: #f6f6f6;
+}
+
+.dark main {
+    color: #1C1C1C;
+}
+
+.dark .theme button {
+    color: #FfFfFf;
+    background: #1C1C1C;
+    border: 2px solid #f7f7f7;
+    border-color: #F6F6F6;
+}
+
+.dark .socials ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.dark .socials ul li:nth-child(1) a:hover {
+    color: rgb(148, 155, 17);
+}
+
+.dark .socials ul li:nth-child(2) a:hover {
+    color: #c0c0c0;
+}
+
+.dark .socials ul li:nth-child(3) a:hover {
+    color: rgba(0, 0, 0, 0);
+    background-image: url(assets/imgs/instagram.svg);
+    background-repeat: no-repeat;
+    background-size: 38px;
+    background-position: top;
+}
+
+.dark .socials ul li:nth-child(4) a:hover {
+    color: #24aceb;
+}
+
+.dark .socials ul li:nth-child(5) a:hover {
+    color: #ec514c;
+}
