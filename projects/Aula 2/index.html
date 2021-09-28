@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/projects/Aula 2/style.css">
+    <script src="/projects/Aula 2/script.js" defer></script>
+    <title>Conversor de moedas - ImersãoDev</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="page-title">
+          Conversor de moedas
+        </h1><br>
+        <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-conversor-de-moedas.svg" class="page-logo" alt=""><br><br>
+        <p class="page-subtitle">
+          Insira o valor e escolha a moeda que você quer converter para Real R$
+        </p>
+        
+        <div class="valorResultado">
+          <label class="text-type-1" for="moeda">Insira o valor</label><br>
+          <input type="number" min="0" id="valor" size="2" /><br>
+        </div>
+        <br>
+        <div class="moedas">
+          <label class="text-type-1" for="moeda">Escolha a moeda</label><br>
+          <button class="buttonDolar" id="dolar" onclick="dolares()">U$ dolar</button>
+          <button class="buttonLibra" id="libra" onclick="libras()">£ libra</button>
+          <button class="buttonEuro" id="euro" onclick="euros()">€ euro</button>
+          <button class="buttonBitcoin" id="bitcoin" onclick="bitcoins()">₿ bitcoin</button>
+        </div>
+
+        <!-- <button type="submit" onclick="Converter()">Converter</button> -->
+
+        <h2 id="valorConvertido"></h2>
+      </div>
+
+      <a href="https://alura.com.br/" target="_blank">
+        <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
+</body>
+</html>

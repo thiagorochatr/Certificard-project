@@ -1,0 +1,140 @@
+body {
+    font-family: "Roboto Mono", monospace;
+    text-align: center;
+    background-image: url("https://www.alura.com.br/assets/img/imersoes/dev-2021/dia-04-aluraflix-e-filmes.png");
+    background-color: #000000;
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+  
+.container {
+    text-align: center;
+    padding: 20px;
+}
+  
+.page-title {
+    color: #ffffff;
+    margin: 0 0 5px;
+}
+  
+.page-subtitle {
+    color: #ffffff;
+    margin-top: 5px;
+}
+  
+.page-logo {
+    width: 200px;
+}
+  
+.alura-logo {
+    width: 40px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+  
+body > img {
+    margin: 0 10px;
+}
+  
+img {
+    max-height: 250px;
+}
+
+
+/* ========BOTÃO CUSTOMIZADO ===== site: https://codepen.io/Navedkhan012/pen/qXYyXy?editors=1100 */
+button {
+	position: relative;
+	cursor: pointer;
+	border: 0;
+	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+    font-weight: bold;
+    font-size: medium;
+    padding: 8px 6px;
+}
+
+button:hover {
+    color: #000 !important;
+	background-color: transparent;
+	text-shadow: nthree;
+}
+
+button:hover::before {
+    left: 0%;
+	right: auto;
+	width: 100%;
+}
+
+button::before {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	height: 100%;
+	width: 0px;
+	z-index: -1;
+	content: '';
+	color: #000 !important;
+	background: #fdf900;
+	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+
+/*  ======== DIV DA LISTA DOS FILMES ========== */
+#lista-de-filmes img {
+    margin: 10px;
+    max-height: 250px;
+}
+
+/* =========== DIV DO FORM =========== */
+
+.form-wrapper {
+    margin: 0 0 15px;
+}
+
+.form-wrapper input {
+    padding: 10px 10px;
+}
+
+/* ============ ANIMAÇÃO NA LOGO DA IMERSÃODEV ================*/
+
+.page-logo:hover {
+    animation: shake .5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+    10% {
+        transform: translate(-1px, -2px) rotate(-8deg);
+    }
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+    50% {
+        transform: translate(2px, 3px) rotate(-1deg);
+    }
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+    90% {
+        transform: translate(1px, 2px) rotate(8deg);
+    }
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
