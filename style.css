@@ -91,6 +91,12 @@ main {
     box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.5);
 }
 
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .socials {
     font-size: 38px;
 }
@@ -128,6 +134,11 @@ main {
 
 .socials ul li:nth-child(5) a:hover {
     color: #c8211b;
+}
+
+.alura-text {
+    font-weight: 400;
+    font-size: 22px;
 }
 
 /* ======== DARK THEME ========== */
