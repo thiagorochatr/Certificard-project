@@ -110,6 +110,12 @@ footer{
 .socials ul li a {
     text-decoration: none;
     color: black;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.socials a:hover {
+    transform: translateY(-11px);
 }
 
 .socials ul li:nth-child(1) a:hover {
@@ -124,8 +130,6 @@ footer{
     color: rgba(0, 0, 0, 0);
     background-image: url(assets/imgs/instagram.svg);
     background-repeat: no-repeat;
-    background-size: 38px;
-    background-position: top;
 }
 
 .socials ul li:nth-child(4) a:hover {
