@@ -1,23 +1,3 @@
-// Desafio básico
-
-// var numeroSecreto = parseInt(Math.random() * 11);
-
-// function Chutar() {
-    // var chute = parseInt(document.getElementById("valor").value);
-
-    // if (chute == numeroSecreto) {
-    //     document.getElementById("resultado").innerHTML = "Você acertou!"
-    // } else if (chute > 10) {
-    //     document.getElementById("resultado").innerHTML = "O número precisa ser entre 0 e 10"
-    // } else if (chute > numeroSecreto) {
-    //     document.getElementById("resultado").innerHTML = "Você errou. O número secreto é menor."
-    // } else {
-    //     document.getElementById("resultado").innerHTML = "Você errou. O número secreto é maior."
-    // }
-// }
-
-// Desafio Avançado
-
 var numeroSecreto = parseInt(Math.random() * 11);
 var tentativas = 3;
 

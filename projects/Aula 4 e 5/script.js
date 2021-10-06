@@ -1,46 +1,3 @@
-// Desafio Básico
-
-// var listaFilmes = 
-// ["https://cdn.fstatic.com/media/movies/covers/2021/04/MMV25078142F3EE931C7643E14A80BDB7FFF_gVR2gnP.jpeg",
-//     "https://br.web.img2.acsta.net/pictures/21/04/07/21/13/5564614.jpg",
-//     "https://br.web.img3.acsta.net/pictures/20/10/09/10/12/0923276.jpg"]
-
-// for (var i = 0; i < listaFilmes.length; i++) {
-//     document.write("<img src=" + listaFilmes[i] + ">")
-// }
-
-
-
-// Desafio Avançado usando DOCUMENT.WRITE
-
-// var listaFilmes = [
-//     "https://cdn.fstatic.com/media/movies/covers/2021/04/MMV25078142F3EE931C7643E14A80BDB7FFF_gVR2gnP.jpeg",
-//     "https://br.web.img2.acsta.net/pictures/21/04/07/21/13/5564614.jpg",
-//     "https://br.web.img3.acsta.net/pictures/20/10/09/10/12/0923276.jpg"
-// ];
-
-// for (var i = 0; i < listaFilmes.length; i++) {
-//     document.write("<img src=" + listaFilmes[i] + ">");
-// }
-
-// function AdicionarFilme() {
-//     var newLink = document.getElementById("new-film").value;
-    
-//     for (var x = 0; x < listaFilmes.length; x++) {
-//         if (newLink == listaFilmes[x]) {
-//             alert("Esse filme já foi adicionado")
-//             newLink = "";
-//         }
-//     }
-//     listaFilmes.push(newLink);
-
-//     document.body.innerHTML += "<img src=" + newLink + ">";
-// }
-
-
-
-// ============= Desafio Avançado ==========================
-
 var listaFilmes = [
     "https://cdn.fstatic.com/media/movies/covers/2021/04/MMV25078142F3EE931C7643E14A80BDB7FFF_gVR2gnP.jpeg",
     "https://br.web.img2.acsta.net/pictures/21/04/07/21/13/5564614.jpg",
@@ -78,15 +35,13 @@ function listarFilmesNaTela(newLink) {
     }
 
     listaFilmes.push(newLink);
-    // elementoLista.innerHTML += "<img src=" + listaFilmes[listaFilmes.length - 1] + ">";
     elementoLista.innerHTML += "<img src=" + newLink + ">";
-    console.log(listaFilmes)
 }
 
 
 // PARA CONTINUAR... FAZER OS DESAFIOS: 
 //                                     Além de colocar a imagem do filme, também adicionar o nome por meio de outro input
-//                                     Criar um botão para remover um filme na tela
+//                                     Criar um botão para remover um filme na tela (pelo nome do filme)
 // Usar esse projeto para ajudar: https://codepen.io/pedrocarioca21/pen/ZEyrOxx?editors=0011
 //                                https://codepen.io/pedrocarioca21/full/ZEyrOxx
 //                                https://codepen.io/altairpa/pen/xxrYVeY

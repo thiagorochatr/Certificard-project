@@ -1,29 +1,3 @@
-// Desafio normal
-
-// var notaPrimeiroBimestre = 9
-// var notaSegundoBimestre = 7
-// var notaTerceiroBimestre = 4
-// var notaQuartoBimestre = 2
-
-// var notaFinal = (notaPrimeiroBimestre + notaSegundoBimestre + notaTerceiroBimestre + notaQuartoBimestre) / 4
-
-// var notaArredondada = notaFinal.toFixed(1)
-
-// alert(notaArredondada)
-
-
-// Desafio: conta inteira dentro do alert()
-
-// var notaPrimeiroBimestre = 9
-// var notaSegundoBimestre = 7
-// var notaTerceiroBimestre = 4
-// var notaQuartoBimestre = 2
-
-// alert(((notaPrimeiroBimestre+notaSegundoBimestre+notaTerceiroBimestre+notaQuartoBimestre)/4).toFixed(1))
-
-
-// Desafio: avançado
-
 var notaPriBi = parseInt(prompt("Digite a sua nota no primeiro bimestre"))
 var notaSegBi = parseInt(prompt("Digite a sua nota no segundo bimestre"))
 var notaTerBi = parseInt(prompt("Digite a sua nota no terceiro bimestre"))

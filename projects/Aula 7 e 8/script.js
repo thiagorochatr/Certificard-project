@@ -79,22 +79,22 @@ var carta8 = {
 };
 
 var carta9 = {
-    nome: "LA, o Grande",
-    imagem: "assets/img-LA-o-Grande.png",
+    nome: "Gaules",
+    imagem: "https://wp-superpoker.s3.amazonaws.com/wp-content/uploads/2021/03/gaules.jpg",
     atributos: {
-        ataque: 6,
-        defesa: 6,
-        magia: 8
+        ataque: 8,
+        defesa: 7,
+        magia: 3
     }
 };
 
 var carta10 = {
-    nome: "Santanelli, o cartógrafo",
-    imagem: "assets/img-santa.png",
+    nome: "Fallen",
+    imagem: "https://pbs.twimg.com/media/Ecp2ga3XoAIo19p.jpg",
     atributos: {
-        ataque: 5,
-        defesa: 5,
-        magia: 10
+        ataque: 8,
+        defesa: 6,
+        magia: 8
     }
 };
 
@@ -110,12 +110,13 @@ function sortearCarta() {
     cartaMaquina = cartas[indiceCartaMaquina];
 
     var indiceCartaJogador = parseInt(Math.random()*cartas.length);
-// PARA O CÓDIGO NÃO SORTEAR A MESMA CARTA NAS DUAS VEZES
+// Para o código não sortear a mesma carta nas duas vezes
     while (indiceCartaMaquina == indiceCartaJogador) {
         indiceCartaJogador = parseInt(Math.random()*cartas.length);
     }
-//EXISTEM DIVERSAS FORMAS DE RESOLVER ESSE MESMO PROBLEMA. OUTRAS DUAS FORMAS SÃO: 1) EMBARALHAR A ARRAY E PEGAR OS DOIS
-//PRIMEIROS ELEMENTOS. 2) SORTEAR O PRIMEIRO ELEMENTO, TIRAR ESSE ELEMENTO DA ARRAY, E SORTEAR O SEGUNDO ELEMENTO
+// Existem diversas formas de resolver esse mesmo problema. Outras duas formas
+// são: 1) Embaralhar a array e pegar os dois primeiros elementos. 2) Sortear
+// o primeiro elemento, tirar ele da array, e sortear o segundo elemento
     cartaJogador = cartas[indiceCartaJogador];
 
     document.getElementById("btnSortear").disabled = true;
@@ -145,7 +146,6 @@ function jogar() {
 
     if (valorCartaJogador > valorCartaMaquina) {
         elementoResultado.innerHTML = "Você venceu!"
-        // elementoResultado.innerHTML = "<p class='resultado-final'>Você venceu!</p>"
     } else if (valorCartaJogador < valorCartaMaquina) {
         elementoResultado.innerHTML = "Você perdeu :("
     } else {
@@ -208,10 +208,8 @@ function exibirCartaMaquinaOculta() {
 
 
 // ========== DESAFIOS AULA 7:
-//      == Resolver o problema de fazer o radio button ser obrigatório. Formas de resolver: 1)tornar obrigatório escolher uma opção. 2)escolher
-//um por default. Tem como resolver por if, random, HTML,...
+// == Resolver o problema de fazer o radio button ser obrigatório. Formas de resolver: 1)tornar obrigatório escolher uma opção. 2)escolher um por default. Tem como resolver por if, random, HTML,...
 
 // ========== DESAFIOS AULA 8:
-//      == Desenvolver um sistema em que a cada carta que um jogador ganhe, ele fique com a carta do oponente e vice versa
-//      == Transformar as funções exibirCartaMaquina() e exibirCartaJogador() em apenas uma, chamada exibirCarta(), utilizando para isso a
-//      == passagem de parâmetros
+// == Desenvolver um sistema em que a cada carta que um jogador ganhe, ele fique com a carta do oponente e vice versa
+// == Transformar as funções exibirCartaMaquina() e exibirCartaJogador() em apenas uma, chamada exibirCarta(), utilizando para isso a passagem de parâmetros
