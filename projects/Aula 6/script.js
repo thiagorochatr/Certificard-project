@@ -1,66 +1,6 @@
-// DESAFIO BÁSICO
-
-// var rafa = { nome: "Rafa", vitorias: 2, empates: 1, derrotas: 1, pontos: 0 };
-// var paulo = { nome: "Paulo", vitorias: 1, empates: 1, derrotas: 2, pontos: 0 };
-
-// function calculaPontos(jogador) {
-//     var pontos = (jogador.vitorias * 3) + jogador.empates;
-//     return pontos;
-// }
-
-// rafa.pontos =calculaPontos(rafa);
-// paulo.pontos = calculaPontos(paulo);
-
-// var jogadores = [rafa, paulo];
-
-// function exibeJogadoresNaTela(jogadores) {
-//     var elemento = ""
-//     for (var i = 0; i < jogadores.length; i++) {
-//         elemento += "<tr><td>" + jogadores[i].nome + "</td>"
-//         elemento += "<td>" + jogadores[i].vitorias + "</td>"
-//         elemento += "<td>" + jogadores[i].empates + "</td>"
-//         elemento += "<td>" + jogadores[i].derrotas + "</td>"
-//         elemento += "<td>" + jogadores[i].pontos + "</td>"
-//         elemento += "<td><button onClick='adicionarVitoria(" + i + ")'>Vitória</button></td>"
-//         elemento += "<td><button onClick='adicionarEmpate(" + i + ")'>Empate</button></td>"
-//         elemento += "<td><button onClick='adicionarDerrota(" + i + ")'>Derrota</button></td>"
-//         elemento += "</tr>"    
-//     }
-
-//     document.getElementById("tabelaJogadores").innerHTML = elemento
-// }
-
-// exibeJogadoresNaTela(jogadores);
-
-// function adicionarVitoria(i) {
-//     var jogador = jogadores[i]
-//     jogador.vitorias++
-//     jogador.pontos = calculaPontos(jogador)
-//     exibeJogadoresNaTela(jogadores)
-// }
-
-// function adicionarEmpate(i) {
-//     var jogador = jogadores[i]
-//     jogador.empates++
-//     jogador.pontos = calculaPontos(jogador)
-//     exibeJogadoresNaTela(jogadores)
-// }
-
-// function adicionarDerrota(i) {
-//     var jogador = jogadores[i]
-//     jogador.derrotas++
-//     exibeJogadoresNaTela(jogadores)
-// }
-
-
-
-
-// ======== DESAFIO AVANÇADO ===========
-
 var rafa = { nome: "Rafa", vitorias: 0, empates: 0, derrotas: 0, pontos: 0, avatar: "https://avatars.githubusercontent.com/u/54322854?v=4"};
 var paulo = { nome: "Paulo", vitorias: 0, empates: 0, derrotas: 0, pontos: 0, avatar: "https://pbs.twimg.com/profile_images/930602367887822850/2v0lXfIR_400x400.jpg"};
 var gui = { nome: "Gui", vitorias: 0, empates: 0, derrotas: 0, pontos: 0, avatar: "https://www.alura.com.br/assets/img/imersoes/instrutores/guilherme_lima.1616501197.jpg"};
-
 
 function calculaPontos(jogador) {
     var pontos = (jogador.vitorias * 3) + jogador.empates;
@@ -74,42 +14,126 @@ gui.pontos = calculaPontos(gui);
 var jogadores = [rafa, paulo, gui];
 
 function exibeJogadoresNaTela(jogadores) {
-    var elemento = ""
+    var elemento = "";
     for (var i = 0; i < jogadores.length; i++) {
-        elemento += "<tr><td>" + jogadores[i].nome + "<br><img class='avatares' src=" + jogadores[i].avatar + "></td>"
-        elemento += "<td>" + jogadores[i].vitorias + "</td>"
-        elemento += "<td>" + jogadores[i].empates + "</td>"
-        elemento += "<td>" + jogadores[i].derrotas + "</td>"
-        elemento += "<td>" + jogadores[i].pontos + "</td>"
-        elemento += "<td><button onClick='adicionarVitoria(" + i + ")'>Vitória</button></td>"
-        elemento += "<td><button onClick='adicionarEmpate(" + i + ")'>Empate</button></td>"
-        elemento += "<td><button onClick='adicionarDerrota(" + i + ")'>Derrota</button></td>"
-        elemento += "</tr>"    
+        elemento += `
+            <tr><td>${jogadores[i].nome}<br><img class='avatares' src=${jogadores[i].avatar}></td>
+            <td>${jogadores[i].vitorias}</td>
+            <td>${jogadores[i].empates}</td>
+            <td>${jogadores[i].derrotas}</td>
+            <td>${jogadores[i].pontos}</td>
+            <td><button id="vitoria(${i})" class="vitoria" onClick='adicionarVitoria(${i})'>Vitória</button></td>
+            <td><button id="empate(${i})" class="empate" onClick='adicionarEmpate(${i})'>Empate</button></td>
+            <td><button id="derrota(${i})" class="derrota" onClick='adicionarDerrota(${i})'>Derrota</button></td>
+            </tr>
+        `
     }
 
-    document.getElementById("tabelaJogadores").innerHTML = elemento
+    document.getElementById("tabelaJogadores").innerHTML = elemento;
 }
 
 exibeJogadoresNaTela(jogadores);
 
 function adicionarVitoria(i) {
-    var jogador = jogadores[i]
-    jogador.vitorias++
-    jogador.pontos = calculaPontos(jogador)
-    exibeJogadoresNaTela(jogadores)
+    let botaoEmpate = document.getElementById(`empate(${i})`);
+    if (botaoEmpate.disabled == false) {
+        let jogador = jogadores[i];
+        jogador.vitorias++;
+        jogador.pontos = calculaPontos(jogador);
+        exibeJogadoresNaTela(jogadores);
+        ordemClassificacao();
+
+        let botaoDerrota = document.getElementById(`derrota(${i})`);
+        botaoDerrota.disabled = true;
+        for (let c = 0; c < jogadores.length; c++) {
+            let botaoEmpate = document.getElementById(`empate(${c})`);
+            let botaoVitoria = document.getElementById(`vitoria(${c})`);
+            botaoEmpate.disabled = true;
+            botaoVitoria.disabled = true;
+        }
+    } else {
+        let jogador = jogadores[i];
+        jogador.vitorias++;
+        jogador.pontos = calculaPontos(jogador);
+        exibeJogadoresNaTela(jogadores);
+        
+        let botaoDerrota = document.getElementById(`derrota(${i})`);
+        botaoDerrota.disabled = false;
+        for (let c = 0; c < jogadores.length; c++) {
+            let botaoEmpate = document.getElementById(`empate(${c})`);
+            let botaoVitoria = document.getElementById(`vitoria(${c})`);
+            botaoEmpate.disabled = false;
+            botaoVitoria.disabled = false; 
+        }
+    }
 }
 
 function adicionarEmpate(i) {
-    var jogador = jogadores[i]
-    jogador.empates++
-    jogador.pontos = calculaPontos(jogador)
-    exibeJogadoresNaTela(jogadores)
+    let botaoDerrota = document.getElementById(`derrota(${i})`);
+    if (botaoDerrota.disabled == false) {
+        let jogador = jogadores[i];
+        jogador.empates++;
+        jogador.pontos = calculaPontos(jogador);
+        exibeJogadoresNaTela(jogadores);
+        
+        let botaoEmpate = document.getElementById(`empate(${i})`);
+        botaoEmpate.disabled = true;
+        for (let c = 0; c < jogadores.length; c++) {
+            let botaoVitoria = document.getElementById(`vitoria(${c})`);
+            let botaoDerrota = document.getElementById(`derrota(${c})`);
+            botaoVitoria.disabled = true;
+            botaoDerrota.disabled = true;
+            ordemClassificacao();
+        }
+    } else {
+        let jogador = jogadores[i];
+        jogador.empates++;
+        jogador.pontos = calculaPontos(jogador);
+        exibeJogadoresNaTela(jogadores);
+        
+        let botaoEmpate = document.getElementById(`empate(${i})`);
+        botaoEmpate.disabled = false;
+        for (let c = 0; c < jogadores.length; c++) {
+            let botaoVitoria = document.getElementById(`vitoria(${c})`);
+            let botaoDerrota = document.getElementById(`derrota(${c})`);
+            botaoVitoria.disabled = false;
+            botaoDerrota.disabled = false;
+            ordemClassificacao();
+        }
+    }
 }
 
 function adicionarDerrota(i) {
-    var jogador = jogadores[i]
-    jogador.derrotas++
-    exibeJogadoresNaTela(jogadores)
+    let botaoEmpate = document.getElementById(`empate(${i})`);
+    if (botaoEmpate.disabled == false) {
+        let jogador = jogadores[i];
+        jogador.derrotas++;
+        exibeJogadoresNaTela(jogadores);
+        
+        let botaoVitoria = document.getElementById(`vitoria(${i})`);
+        botaoVitoria.disabled = true;
+        for (let c = 0; c < jogadores.length; c++) {
+            let botaoDerrota = document.getElementById(`derrota(${c})`);
+            let botaoEmpate = document.getElementById(`empate(${c})`);
+            botaoDerrota.disabled = true;
+            botaoEmpate.disabled = true;
+            ordemClassificacao();
+        }
+    } else {
+        let jogador = jogadores[i];
+        jogador.derrotas++;
+        exibeJogadoresNaTela(jogadores);
+        
+        let botaoVitoria = document.getElementById(`vitoria(${i})`);
+        botaoVitoria.disabled = false;
+        for (let c = 0; c < jogadores.length; c++) {
+            let botaoDerrota = document.getElementById(`derrota(${c})`);
+            let botaoEmpate = document.getElementById(`empate(${c})`);
+            botaoDerrota.disabled = false;
+            botaoEmpate.disabled = false;
+            ordemClassificacao();
+        }
+    }
 }
 
 function zerarPontos(i) {
@@ -123,12 +147,14 @@ function zerarPontos(i) {
 }
 
 function adicionarJogador() {
-    var nomeNovoJogador = document.getElementById("nomeNovoJogador").value
-    var avatarNovoJogador = document.getElementById("avatarNovoJogador").value
+    var nomeNovoJogador = document.getElementById("nomeNovoJogador").value;
+    var avatarNovoJogador = document.getElementById("avatarNovoJogador").value;
     jogadores.push({nome: nomeNovoJogador, vitorias: 0, empates: 0, derrotas: 0, pontos: 0, avatar: avatarNovoJogador})
-    document.getElementById("nomeNovoJogador").value = ""
-    document.getElementById("avatarNovoJogador").value = ""
-    exibeJogadoresNaTela(jogadores)
+    document.getElementById("nomeNovoJogador").value = "";
+    document.getElementById("avatarNovoJogador").value = "";
+
+    exibeJogadoresNaTela(jogadores);
+    ordemClassificacao(jogadores);
 }
 
 function removerJogador() {
@@ -143,22 +169,25 @@ function removerJogador() {
     }
 }
 
-// ===DESAFIOS:
-// espaço dos "pontos" do jogador que está ganhando fica brilhando (em destaque) ======= https://www.alura.com.br/artigos/alterando-css-com-javascript ========== https://cursos.alura.com.br/forum/topico-alterar-cor-de-conteudo-de-acordo-com-valores-na-tabela-51585 
-// Validar se todos os pontos estão fazendo sentido, tanto o número de empates, quanto derrotas e vitórias com os demais jogadores (impossível haver mais vitórias que derrotas, por exemplo)
+function ordemClassificacao() {
+    jogadores.sort(function (a, b) {
+        if (a.pontos < b.pontos) {
+            return 1;
+        } else if (a.pontos == b.pontos) {
+            return 0;
+        } else {
+            return -1;
+        }
+    });
+}
 
-// ===DESAFIOS FEITOS:
-// Criar um botão para zerar todos os pontos
-// Adicionar a imagem de cada jogador
-// Criar um botão e inputs (campos de texto) para adicionar novos jogadores, com seus respectivos dados
-// Botão para excluir jogador
+
 
 // ===Projetos para pegar ideias:
 //                  https://codepen.io/rivnatzille/pen/GREdoGj?editors=0010
 //                  https://codepen.io/guilpas/pen/jOwxyqO?editors=0010
 //                  https://codepen.io/lfernandogcruz/pen/PojeYJe?editors=0010
-// 
-// 
+//                  https://codepen.io/annereginatto/pen/YzQjLjM
 
 // FAZER MELHORIAS 
 // colocar uma condição de só adicionar um jogador caso tenha nome
