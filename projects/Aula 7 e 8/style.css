@@ -6,16 +6,24 @@ body {
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
-    padding-bottom: 20vh;
 }
 
 .container {
     text-align: center;
-    padding: 20px;
+    padding: 30px;
+}
+
+.text-imersao {
+    font-size: 20px;
+}
+
+.text-imersao-span {
+    background-color: rgba(153, 205, 50, 0.637);
 }
 
 .page-logo {
-    max-width: 400px;
+    margin-top: 20px;
+    max-width: 300px;
 }
 
 .page-title {
@@ -129,9 +137,14 @@ form {
     font-size: 1.2rem;
 }
 
+.container-result {
+    margin-top: -5rem;
+}
+
 #resultado {
     color: #ffffff;
-    font-size: 1.3rem;
+    font-size: 2.6rem;
+    height: 2.7rem;
 }
 
 .baralho-meio img {
